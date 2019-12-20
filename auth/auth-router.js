@@ -31,7 +31,7 @@ router.post("/login", (req, res) => {
       if (user && bcrypt.compareSync(password, user.password)) {
         // pass the found user into the genToken() method, and get the token
         const token = genToken(user);
-        // return the found user's username, and the token"
+        // returns1q the found user's username, and the token"
         res.status(200).json({ username: user.username, token: token });
       } else {
         res.status(401).json({ message: "Invalid Credentials" });
@@ -43,7 +43,7 @@ router.post("/login", (req, res) => {
 });
 
 function genToken(user) {
-  // create the payload...
+  // created the payload...
   const payload = {
     userid: user.id,
     username: user.username,

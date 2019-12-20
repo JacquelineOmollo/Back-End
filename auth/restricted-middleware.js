@@ -1,3 +1,6 @@
+const jwt = require("jsonwebtoken");
+const secrets = require("../database/dbConfig");
+
 module.exports = (req, res, next) => {
   const token = req.headers.authorization;
   if (req.decodedJwt) {
